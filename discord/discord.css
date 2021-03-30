@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "menu header header" 30px
+    "menu general main " /
+    0.1fr 0.15fr 0.9fr;
+  grid-gap: 2px;
+
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: lightyellow;
+}
+
+.general {
+  grid-area: general;
+  background-color: lightpink;
+}
+
+.main {
+  grid-area: main;
+  background-color: lightgreen;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: lightcoral;
+}
+
+/* Ipad */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template:
+      "menu header" 80px
+      "menu general" 70px
+      "menu main" 1fr /
+      0.2fr 1fr;
+
+    grid-gap: 2px;
+  }
+}
+
+/* Iphone 6,7,8 */
+@media screen and (max-width: 375px) {
+  .container {
+    grid-template:
+      "menu header" 50px
+      "menu main" 1fr
+      "general general" 50px /
+      0.2fr 1fr;
+
+    grid-gap: 1px;
+  }
+}

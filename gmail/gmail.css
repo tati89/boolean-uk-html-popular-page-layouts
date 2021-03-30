@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "header header header header" 80px
+    "left main right-middle right-right" /
+    0.4fr 1fr 0.5fr 0.2fr;
+
+  grid-gap: 2px;
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: lightyellow;
+}
+
+.left {
+  grid-area: left;
+  background-color: lightpink;
+}
+
+.main {
+  grid-area: main;
+  background-color: lightgreen;
+}
+
+.right-middle {
+  grid-area: right-middle;
+  background-color: lightcoral;
+}
+
+.right-right {
+  grid-area: right-right;
+  background-color: lightblue;
+}
+
+/* Ipad */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template:
+      "header header header" 90px
+      "left main right-right" /
+      0.3fr 0.8fr 0.2fr;
+
+    grid-gap: 5px;
+  }
+
+  .right-middle {
+    grid-area: right-middle;
+    display: none;
+  }
+}
+
+/* Iphone 6/7/8 */
+@media screen and (max-width: 376px) {
+  .container {
+    grid-template:
+      "header" 50px
+      "main" 1fr
+      "left" 60px /
+      1fr;
+
+    grid-gap: 1px;
+  }
+
+  .right-middle,
+  .right-right {
+    display: none;
+  }
+}
